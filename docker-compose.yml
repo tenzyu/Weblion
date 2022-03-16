@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  sagyo-space-bot:
-    container_name: sagyo-space-bot
+  weblion:
+    container_name: weblion
     image: node
     volumes:
-      - /home/deploy/sagyo-space-bot:/code
+      - /home/deploy/weblion:/code
     working_dir: /code
     command: npm start
     restart: always
