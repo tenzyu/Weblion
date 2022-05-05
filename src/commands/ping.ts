@@ -7,8 +7,9 @@ export default {
     name: 'ping',
     description: 'BOT がオンラインか確認する。'
   },
-  async execute (interaction: CommandInteraction) {
+  async execute(interaction: CommandInteraction) {
     const latency = Math.round(client.ws.ping)
+
     await interaction.reply({
       content: `Pong! Latency is ${latency}ms.`,
       ephemeral: true
