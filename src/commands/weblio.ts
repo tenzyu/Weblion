@@ -12,8 +12,9 @@ export default {
     }]
   },
   async execute (interaction: CommandInteraction) {
-    // required なので絶対ある。
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
-    await interaction.reply(`https://www.weblio.jp/content/${interaction.options.getString('word')}`)
+    const word = <string>interaction.options.getString('word')
+    const fixedWord = word.replace(/\s/g, '+')
+    const url = `https://weblio.jp/search/${fixedWord}`
+    await interaction.reply(url)
   }
 }
